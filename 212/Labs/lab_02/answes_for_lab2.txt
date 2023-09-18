@@ -1,0 +1,13 @@
+Question 1.
+The first value that I notice that affects the time at all is 1000.
+Question 2.
+the first number that gave me a time is 1500
+Question 3. 
+The second function is faster after testing I think its faster because it
+only uses one for loop.
+Question 4
+I think the second one will run faster because iterative code runs faster then 
+recursive.
+Question 5.
+The second function was faster then the first I think its faster because its 
+iterative and not recursive.

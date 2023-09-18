@@ -1,0 +1,15 @@
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <string>
+#include <random>
+#include <cstdlib>
+
+int main() {
+    int seed = 1243;
+    std::vector<int> neighbors = {1,2,3,4,5};
+    std::srand(seed); // sets the seed for rand
+    int idx = std::rand() / ((RAND_MAX + 1u) / neighbors.size());
+    std::cout << idx << std::endl;
+    return 0;
+}
