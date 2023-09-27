@@ -1,3 +1,8 @@
 # CSC212
-Data Structures &amp; Abstractions 
-All Work for the classs
+`Data Structures & Abstractions`
+
+ All Work for the class includes:
+
+ - Labs
+ - Assignments
+ - HW
