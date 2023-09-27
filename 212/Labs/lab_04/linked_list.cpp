@@ -6,7 +6,7 @@ LinkedList::LinkedList(){
     this ->head = new Node();
     this ->size = 0;
 }
-
+//test for git hub
 
 LinkedList::LinkedList(int data){
  this-> head = new Node(data);
