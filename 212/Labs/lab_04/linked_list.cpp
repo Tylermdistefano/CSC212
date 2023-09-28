@@ -71,16 +71,19 @@ for(int i = 0 ; i < idx-1 ; i++){
 }
 
 void LinkedList::remove(int data){
- Node* current = head;
-    if(current->data == data){
+if (head == nullptr) {
+        return;
+    }
+    
+    if (head->data == data) {
         Node* temp = head;
         head = head->next;
         delete temp;
         size--;
         return;
-        }
-
- Node* current = head;
+    }
+    
+    Node* current = head;
     while (current->next != nullptr && current->next->data != data) {
         current = current->next;
     }
@@ -91,8 +94,6 @@ void LinkedList::remove(int data){
         delete temp;
         size--;
     }
-
-    
 }
 
 
