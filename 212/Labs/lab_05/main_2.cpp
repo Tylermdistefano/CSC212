@@ -58,7 +58,8 @@ int main(int argc, char* argv[]){
         } 
         else{
         int num = stoi(line_vals[0]);
-        que->enqueue(num);
+        int priority = stoi(line_vals[1]);
+        que->enqueue(num, priority);
         std::cout << que->to_string() << std::endl;
         }
     }

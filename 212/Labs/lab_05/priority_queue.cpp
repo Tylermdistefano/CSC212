@@ -14,17 +14,17 @@ PQueue::PQueue(int data, int priority){
     this->tail = head;
 }
 
-PQueue::PQueue(std::vector<std::pair<int,int>> vec){
+PQueue::PQueue(std::vector<int> vec){
     if(vec.size() == 0){
         this->head = nullptr;
         this->size = 0;
         this->tail = head;
     }else{
-        this->head = new Node(vec[0].first,vec[0].second);
+        this->head = new Node(vec[0],0);
         Node* temp = this->head;
         this-> tail = temp;
         for(int i = 1; i < vec.size(); i++){
-            temp->next = new Node(vec[i].first,vec[i].second );
+            temp->next = new Node(vec[i],i);
             temp = temp->next;
             this->tail = temp;
             // ->    de-reference + dot operator
@@ -59,13 +59,24 @@ int PQueue::peek(){
     return front;
 }
 
-void PQueue::enqueue(int data){
+void PQueue::enqueue(int data, int priority){
     if(this->head == nullptr){
-        this->head = new Node(data);
+        this->head = new Node(data, priority);
         this->tail = head;
     }else{
-        tail->next = new Node(data); //TODO: make so it places in right place
-        this->tail = tail->next;
+        Node* tmp = this->head;
+        while (priority >= tmp->next->priority)
+        {
+            tmp = tmp->next;
+        }
+        Node* hold=tmp->next; 
+        tmp->next= new Node(data,priority);
+        tmp->next->next= hold;
+
+        if(tail->next != nullptr){
+            this->tail = tail->next;
+        }
+        
     }
 
     this->size++;
